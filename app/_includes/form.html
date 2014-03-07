@@ -1,0 +1,25 @@
+<div ng-controller="FormCtrl">
+  <form style="margin-bottom: 20px;" role="form" name="lead">
+    <div class="controls">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="has-feedback form-group" ng-class="{'has-success': lead.phone.$valid,'has-error': lead.phone.$invalid && !lead.phone.$pristine}">
+            <input mixpanel-input class="form-control input-lg" type="tel" placeholder="Phone" ng-model="phone" required ng-pattern="/^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/" name="phone"
+                   ng-class="{'has-success': lead.phone.$valid,'has-error': lead.phone.$invalid && !lead.phone.$pristine}">
+            <span class="fa fa-check form-control-feedback input-validation-icon" ng-show="!lead.phone.$pristine" ng-class="{'fa-check': lead.phone.$valid, 'fa-minus': lead.phone.$invalid && !lead.phone.$pristine }"></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="has-feedback form-group" ng-class="{'has-success': lead.email.$valid,'has-error': lead.email.$invalid && !lead.email.$pristine}">
+            <input mixpanel-input class="form-control input-lg" type="tel" placeholder="Email" ng-model="email" required ng-pattern="/^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/" name="email"
+                   ng-class="{'has-success': lead.email.$valid,'has-error': lead.email.$invalid && !lead.email.$pristine}">
+            <span class="fa fa-check form-control-feedback input-validation-icon" ng-show="!lead.email.$pristine" ng-class="{'fa-check': lead.email.$valid, 'fa-minus': lead.email.$invalid && !lead.email.$pristine }"></span>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary btn-lg" ng-click="submit()" ng-disabled="submitting">Contact me later</button>
+    </div>
+  </form>
+</div>
