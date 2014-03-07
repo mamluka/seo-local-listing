@@ -10,11 +10,11 @@
 
 {% unless page.no_header %}
 {% if page.image.feature %}
-{% capture image %}{{site.url}}/img/{{ page.image.feature }}.jpg{% endcapture %}
-{% capture image_medium %}{{site.url}}/img/{{ page.image.feature }}_medium.jpg{% endcapture %}
+{% capture image %}/img/{{ page.image.feature }}.jpg{% endcapture %}
+{% capture image_medium %}/img/{{ page.image.feature }}_medium.jpg{% endcapture %}
 {% capture image_small %}{{site.base_path}}/img/{{ page.image.feature }}_small.jpg{% endcapture %}
-<style>
 
+<style>
   .blog-header.header-white {
     background-image: url('{{ image }}');
   }
@@ -29,7 +29,9 @@
       background-image: url('{{  image_small | base64 }}');
     }
   }
+
 </style>
+
 
 <header class="blog-header header-white header-overlay align-center align-middle" itemscope itemtype="http://schema.org/Organization">
   {% else %}
